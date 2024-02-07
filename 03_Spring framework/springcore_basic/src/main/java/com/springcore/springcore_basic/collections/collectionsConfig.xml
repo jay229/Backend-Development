@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.springcore_basic.collections.Employee" name="emp1">
+		<property name="name" value="Mritunjay kumar tiwari" />
+		<property name="phones">
+			<list>
+				<value>
+					6206890500
+				</value>
+				<value>
+					6202246548
+				</value>
+			</list>
+
+		</property>
+
+		<property name="address">
+			<set>
+				<value>
+					Ara
+				</value>
+				<value>
+					Chittoor
+				</value>
+				<value>
+					East delhi
+				</value>
+			</set>
+
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="java" value="1 year" />
+				<entry key="Spring boot" value="2 year" />
+			</map>
+
+		</property>
+
+		<property name="props">
+			<props>
+			<prop key="myname">Mritunjay kumar tiwari</prop>
+			<prop key="email">mritunjaykumartiwari1@gmail.com</prop>
+			</props>
+		</property>
+
+	</bean>
+
+
+</beans>
