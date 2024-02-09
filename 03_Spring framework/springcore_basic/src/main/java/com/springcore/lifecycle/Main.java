@@ -16,6 +16,11 @@ public class Main {
 		Samosa samosa=(Samosa)context.getBean("s1");
 		System.out.println(samosa);
 		context.registerShutdownHook();
+		
+		System.out.println("===================================");
+		
+		Pepsi pepsi=(Pepsi) context.getBean("p1");
+		System.out.println(pepsi);
 
 	}
 
