@@ -7,6 +7,12 @@ public class A {
 		// TODO Auto-generated constructor stub
 		System.out.println("A is created");
 	}
+	
+	public A(B b) {
+		super();
+		this.b = b;
+	}
+
 	public B getB() {
 		return b;
 	}
