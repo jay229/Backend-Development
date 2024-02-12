@@ -14,6 +14,10 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 		<property name="city" value="east delhi"/>
 		<property name="state" value="Delhi"/>
 	</bean>
+	<bean id="address1" class="com.springcore.autowiring.annotation.Address">
+		<property name="city" value="Arrah"/>
+		<property name="state" value="Bihar"/>
+	</bean>
 	<bean name="emp1" class="com.springcore.autowiring.annotation.Employee"></bean>
 
 </beans>
