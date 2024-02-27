@@ -18,8 +18,21 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().fullyAuthenticated())
-                .formLogin(Customizer.withDefaults());
+//        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().fullyAuthenticated())
+//                .formLogin()
+//                .defaultSuccessUrl("/addUserForm")
+//                .permitAll();
+//        return http.build();
+
+        http
+                .authorizeRequests()
+                .requestMatchers("/addUserForm").authenticated() // Allow access to addUserForm only for authenticated users
+                .anyRequest().permitAll() // Allow all other requests
+                .and()
+                .formLogin()
+//                .loginPage("/login") // Your login page
+                .defaultSuccessUrl("/addUserForm") // Redirect to addUserForm after successful login
+                .permitAll();
 
         return http.build();
     }
@@ -41,8 +54,8 @@ public class SecurityConfig {
     @Bean
     AuthenticationManager authManager(BaseLdapPathContextSource source) {
         LdapBindAuthenticationManagerFactory factory = new LdapBindAuthenticationManagerFactory(source);
-        factory.setUserDnPatterns("cn={0},ou=users,ou=system");
-//        factory.setUserDnPatterns("cn={0}");
+        factory.setUserDnPatterns("cn={0},ou=users,ou=system","uid={0},ou=users,ou=system");
+//        factory.setUserDnPatterns("uid={0},ou=users,ou=system");
         return factory.createAuthenticationManager();
     }
 }
