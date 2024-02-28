@@ -64,7 +64,7 @@ public class LdapUserService {
     public void updateUser(LdapUser ldapUser) {
 //        ldapTemplate.update(ldapUser);
 //        ldapTemplate.rebind(BASE_DN,null, ldapUser.toAttributes());
-        ldapTemplate.modifyAttributes(BASE_DN, getModificationItems(ldapUser));
+        ldapTemplate.modifyAttributes("uid=" + ldapUser.getUsername() + "," +BASE_DN, getModificationItems(ldapUser));
     }
 
     private ModificationItem[] getModificationItems(LdapUser user) {

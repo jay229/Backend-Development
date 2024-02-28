@@ -18,23 +18,23 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().fullyAuthenticated())
-//                .formLogin()
-//                .defaultSuccessUrl("/addUserForm")
-//                .permitAll();
-//        return http.build();
-
-        http
-                .authorizeRequests()
-                .requestMatchers("/addUserForm").authenticated() // Allow access to addUserForm only for authenticated users
-                .anyRequest().permitAll() // Allow all other requests
-                .and()
+        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().fullyAuthenticated())
                 .formLogin()
-//                .loginPage("/login") // Your login page
-                .defaultSuccessUrl("/addUserForm") // Redirect to addUserForm after successful login
+                .defaultSuccessUrl("/addUserForm")
                 .permitAll();
-
         return http.build();
+
+//        http
+//                .authorizeRequests()
+//                .requestMatchers("/addUserForm").authenticated() // Allow access to addUserForm only for authenticated users
+//                .anyRequest().permitAll() // Allow all other requests
+//                .and()
+//                .formLogin()
+////                .loginPage("/login") // Your login page
+//                .defaultSuccessUrl("/addUserForm") // Redirect to addUserForm after successful login
+//                .permitAll();
+//
+//        return http.build();
     }
 
     @Bean
