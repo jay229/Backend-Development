@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "student_name": "Rohan",
+    "student_address": "Patna",
+    "student_class": "Math",
+    "coordinator_name": "Aman",
+    "teacher_name": "Michael",
+    "coordinator_address": "Ara",
+    "teacher_address": "Rohtas"
+  },
+  {
+    "id": 2,
+    "student_name": "Boby",
+    "student_address": "Gaya",
+    "student_class": "Science",
+    "coordinator_name": "Aman",
+    "teacher_name": "Emily",
+    "coordinator_address": "Ara",
+    "teacher_address": "Shivan"
+  },
+  {
+    "id": 3,
+    "student_name": "Roshan",
+    "student_address": "Chhapra",
+    "student_class": "History",
+    "coordinator_name": "John",
+    "teacher_name": "Michael",
+    "coordinator_address": "Buxar",
+    "teacher_address": "Rohtas"
+  },
+  {
+    "id": 4,
+    "student_name": "Smith",
+    "student_address": "Sasaram",
+    "student_class": "English",
+    "coordinator_name": "John",
+    "teacher_name": "Emily",
+    "coordinator_address": "Buxar",
+    "teacher_address": "Shivan"
+  }
+]
