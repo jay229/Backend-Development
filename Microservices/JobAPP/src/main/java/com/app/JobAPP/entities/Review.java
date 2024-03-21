@@ -11,15 +11,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Job {
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer jobId;
+    private Integer reviewId;
     private String title;
     private String description;
-    private Integer minSalary;
-    private Integer maxSalary;
-    private String location;
+    private Double rating;
     @ManyToOne
     private Company company;
 }
