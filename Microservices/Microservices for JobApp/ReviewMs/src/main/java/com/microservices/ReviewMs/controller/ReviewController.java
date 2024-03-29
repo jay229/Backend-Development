@@ -1,5 +1,6 @@
 package com.microservices.ReviewMs.controller;
 
+import com.microservices.ReviewMs.dto.ReviewWithCompanyDto;
 import com.microservices.ReviewMs.model.Review;
 import com.microservices.ReviewMs.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class ReviewController {
     ReviewService reviewService;
 
     @GetMapping("/all/{companyId}")
-    public ResponseEntity<List<Review>> getAllReviews(@PathVariable int companyId){
+    public ResponseEntity<List<ReviewWithCompanyDto>> getAllReviews(@PathVariable int companyId){
         return new ResponseEntity<>(reviewService.getAllReviews(companyId),
                 HttpStatus.OK);
     }
@@ -31,7 +32,7 @@ public class ReviewController {
                     HttpStatus.NOT_FOUND);
     }
     @GetMapping("/find/{reviewId}")
-    public ResponseEntity<Review> getReview(@PathVariable int reviewId){
+    public ResponseEntity<ReviewWithCompanyDto> getReview(@PathVariable int reviewId){
         return new ResponseEntity<>(reviewService.getReview(reviewId),
                 HttpStatus.OK);
 
