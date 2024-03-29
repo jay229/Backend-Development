@@ -1,5 +1,6 @@
 package com.microservices.CompanyMs.service;
 
+import com.microservices.CompanyMs.dto.CompanyWithReviewsDto;
 import com.microservices.CompanyMs.model.Company;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 
 public interface CompanyService {
-    List<Company> getAllCompanies();
+    List<CompanyWithReviewsDto> getAllCompanies();
 
     boolean updateCompany(Company company, int id);
 
@@ -15,5 +16,5 @@ public interface CompanyService {
 
     boolean deleteCompanyById(int id);
 
-    Company getCompanyById(int id);
+    CompanyWithReviewsDto getCompanyById(int id);
 }

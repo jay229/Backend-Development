@@ -1,5 +1,6 @@
 package com.microservices.CompanyMs.controller;
 
+import com.microservices.CompanyMs.dto.CompanyWithReviewsDto;
 import com.microservices.CompanyMs.model.Company;
 import com.microservices.CompanyMs.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CompanyController {
     CompanyService companyService;
 
     @GetMapping("/find-all")
-    public ResponseEntity<List<Company>> getAllCompanies() {
+    public ResponseEntity<List<CompanyWithReviewsDto>> getAllCompanies() {
         return new ResponseEntity<>(companyService.getAllCompanies(),
                 HttpStatus.OK);
     }
@@ -53,10 +54,10 @@ public class CompanyController {
 
     @GetMapping("/find/{id}")
     public ResponseEntity getCompany(@PathVariable int id) {
-        Company company = companyService.getCompanyById(id);
-        if (company != null) {
-            return new ResponseEntity<>(company, HttpStatus.OK);
+        CompanyWithReviewsDto companyWithReviewsDto = companyService.getCompanyById(id);
+        if (companyWithReviewsDto != null) {
+            return new ResponseEntity<>(companyWithReviewsDto, HttpStatus.OK);
         }
-        return new ResponseEntity<>("Company not found with company id" + id, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Company not found with company id " + id, HttpStatus.NOT_FOUND);
     }
 }
