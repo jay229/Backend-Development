@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: "ServiceRegistry"
+server:
+  port: 8761
+  eureka:
+  instance:
+    hostname: "localhost"
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    enabled: true
+    serviceUrl:
+      defaultZone: "http://localhost:8761/eureka"
+
+logging:
+  level:
+    com.netflix.eureka: DEBUG
+    com.netflix.discovery: DEBUG
+
+
